@@ -1,0 +1,37 @@
+1. Start
+
+2. Input Array Size
+   - Prompt the user to enter the number of elements (`size`) in the array.
+   - Store this value in a variable called `size`.
+
+3. Declare the Array
+   - Declare an array `arr` of size `size`.
+
+4. Input Array Elements (Sorted)
+   - Prompt the user to enter the elements of the array in sorted order.
+   - For each element (from index `0` to `size-1`):
+     - Read the element and store it in `arr[i]`.
+
+5. Input Target Element
+   - Prompt the user to enter the target element (`target`) that they want to search for in the array.
+   - Store this value in a variable called `target`.
+
+6. Initialize Search Variables
+   - Set two pointers: `left` to `0` and `right` to `size-1`.
+
+7. Perform Binary Search
+   - While `left` is less than or equal to `right`:
+     - Calculate `mid` as `left + (right - left) / 2`.
+     - If `arr[mid]` equals `target`:
+       - The target is found at index `mid`.
+       - Exit the loop.
+     - If `arr[mid]` is less than `target`:
+       - Move the `left` pointer to `mid + 1` (ignore the left half).
+     - Else (if `arr[mid]` is greater than `target`):
+       - Move the `right` pointer to `mid - 1` (ignore the right half).
+
+8. Check Result
+   - If the target was found, print the index where it was found.
+   - Otherwise, print that the element was not found.
+
+9. End

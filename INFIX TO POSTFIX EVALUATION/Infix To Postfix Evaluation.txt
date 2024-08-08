@@ -1,0 +1,43 @@
+1. Initialize:
+   - Create a character stack for operators and parentheses.
+   - Create an integer stack for operands.
+   - Define precedence levels for operators.
+
+2. Read input:
+   - Input the infix expression as a string.
+
+3. Convert Infix to Postfix:
+   - Initialize an empty postfix string.
+   - For each character in the infix expression:
+     a. If the character is an operand (number or variable):
+        - Append it to the postfix string.
+     b. If the character is an opening parenthesis '(':
+        - Push it onto the character stack.
+     c. If the character is a closing parenthesis ')':
+        - Pop from the character stack and append to postfix string until an opening parenthesis '(' is found.
+     d. If the character is an operator (+, -, *, /):
+        - While there is an operator at the top of the character stack with higher or equal precedence:
+          - Pop operators from the stack and append to postfix string.
+        - Push the current operator onto the stack.
+   - After reading all characters:
+     - Pop all remaining operators from the stack and append them to the postfix string.
+
+4. Evaluate Postfix Expression:
+   - Initialize the integer stack.
+   - For each character in the postfix expression:
+     a. If the character is an operand (number):
+        - Convert it to an integer and push onto the integer stack.
+     b. If the character is a variable:
+        - Prompt the user to input a value for the variable.
+        - Push the variable's value onto the integer stack.
+     c. If the character is an operator (+, -, *, /):
+        - Pop the top two values from the integer stack.
+        - Apply the operator to these values.
+        - Push the result back onto the integer stack.
+   - The final result is the top value of the integer stack.
+
+5. Output:
+   - Print the postfix expression.
+   - Print the result of the postfix evaluation.
+
+6. End.

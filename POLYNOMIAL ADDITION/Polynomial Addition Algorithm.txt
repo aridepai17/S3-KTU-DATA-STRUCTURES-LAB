@@ -1,0 +1,36 @@
+1. Start
+
+2. Define MAX as 100 (to set the maximum size for the polynomial arrays).
+
+3. Define a function `inputPolynomial(poly[], degree)`:
+   - Input: An integer array `poly[]` and an integer `degree`.
+   - Process:
+     - Iterate from `degree` down to 0:
+       - Prompt the user to enter the coefficient for `x^i`.
+       - Read the coefficient and store it in `poly[i]`.
+
+4. Define a function `addPolynomials(poly1[], poly2[], result[], degree)`:
+   - Input: Two integer arrays `poly1[]` and `poly2[]`, an integer array `result[]`, and an integer `degree`.
+   - Process:
+     - Iterate from 0 to `degree`:
+       - Set `result[i]` to `poly1[i] + poly2[i]`.
+
+5. Define a function `displayPolynomial(poly[], degree)`:
+   - Input: An integer array `poly[]` and an integer `degree`.
+   - Process:
+     - Iterate from `degree` down to 0:
+       - If `poly[i]` is not 0:
+         - Print `poly[i]` followed by `x^i`.
+         - If `i` is greater than 0, print " + ".
+     - Print a newline.
+
+6. In the `main` function:
+   - Declare an integer `degree`.
+   - Declare three integer arrays `poly1[MAX]`, `poly2[MAX]`, and `result[MAX]` initialized to 0.
+   - Prompt the user to enter the degree of the polynomials and read it into `degree`.
+   - Call `inputPolynomial(poly1, degree)` to input the first polynomial.
+   - Call `inputPolynomial(poly2, degree)` to input the second polynomial.
+   - Call `addPolynomials(poly1, poly2, result, degree)` to add the two polynomials.
+   - Call `displayPolynomial(result, degree)` to display the resultant polynomial.
+
+7. End

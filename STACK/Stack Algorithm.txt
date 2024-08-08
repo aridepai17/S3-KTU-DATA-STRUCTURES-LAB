@@ -1,0 +1,45 @@
+1. Initialization:
+   - Define SIZE as 100.
+   - Create an array stack of size SIZE.
+   - Initialize top to -1 (indicating an empty stack).
+
+2. Push Operation:
+   - Input: value to be pushed onto the stack.
+   - Check: If top equals SIZE - 1, print "Stack Overflow" (stack is full).
+   - Otherwise:
+     - Increment top by 1.
+     - Set stack[top] to value.
+     - Print "value pushed to stack".
+
+3. Pop Operation:
+   - Check: If top equals -1, print "Stack Underflow" (stack is empty).
+   - Otherwise:
+     - Retrieve the value from stack[top].
+     - Decrement top by 1.
+     - Print "Popped value: value".
+     - Return the retrieved value.
+
+4. Display Operation:
+   - Check: If top equals -1, print "Stack is Empty" (stack is empty).
+   - Otherwise:
+     - Print "Stack elements are:".
+     - Loop from top down to 0:
+       - Print stack[i].
+
+5. Main Program:
+   - Initialize the stack.
+   - Repeat until user chooses to exit:
+     - Display menu options (Push, Pop, Display, Exit).
+     - Input: User choice.
+     - Switch on user choice:
+       - Case 1 (Push):
+         - Input: Value to push.
+         - Call push(value).
+       - Case 2 (Pop):
+         - Call pop() and print the result.
+       - Case 3 (Display):
+         - Call display().
+       - Case 4 (Exit):
+         - Print "Exiting...".
+       - Default:
+         - Print "Invalid choice".

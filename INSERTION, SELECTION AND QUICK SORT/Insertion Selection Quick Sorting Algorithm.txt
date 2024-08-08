@@ -1,0 +1,31 @@
+1. Insertion Sort
+   - Function: insertionSort(int arr[], int n)
+     1. Iterate from the second element to the last element.
+     2. For each element, store it as `key` and initialize `j` to the index before the current element.
+     3. Move elements that are greater than `key` to one position ahead of their current position.
+     4. Insert `key` into its correct position.
+
+2. Selection Sort
+   - Function: selectionSort(int arr[], int n)
+     1. Iterate from the first element to the second last element.
+     2. For each element, find the minimum element in the unsorted portion.
+     3. Swap the found minimum element with the current element.
+
+3. Quick Sort
+   - Function: quickSort(int arr[], int low, int high)
+     1. If `low` is less than `high`:
+        1. Partition the array and get the pivot index.
+        2. Recursively apply `quickSort` to the sub-arrays before and after the pivot.
+
+   - Partition Function: partition(int arr[], int low, int high)
+     1. Choose the last element as the pivot.
+     2. Rearrange elements such that elements less than the pivot come before it and elements greater come after it.
+     3. Swap the pivot with the element at the correct position.
+
+4. Swap Function
+   - Function: swap(int *a, int *b)
+     1. Swap the values of `a` and `b`.
+
+5. Print Array
+   - Function: printArray(int arr[], int n)
+     1. Print all elements of the array separated by spaces.

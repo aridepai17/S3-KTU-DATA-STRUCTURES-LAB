@@ -1,0 +1,31 @@
+1. Heap Sort
+   - Function: heapSort(int arr[], int n)
+     1. Build a max heap from the input data.
+     2. Extract the maximum element from the heap and place it at the end of the array.
+     3. Heapify the reduced heap to maintain heap properties.
+     4. Repeat the process until the heap is empty.
+
+   - Function: heapify(int arr[], int n, int i)
+     1. Initialize largest as root.
+     2. Compute left and right children indices.
+     3. Compare root with left and right children and find the largest value.
+     4. Swap root with the largest if needed.
+     5. Recursively heapify the affected subtree.
+
+   - Function: swap(int *a, int *b)
+     1. Swap the values of `a` and `b`.
+
+2. Merge Sort
+   - Function: mergeSort(int arr[], int l, int r)
+     1. Divide the array into two halves.
+     2. Recursively apply mergeSort to both halves.
+     3. Merge the sorted halves.
+
+   - Function: merge(int arr[], int l, int m, int r)
+     1. Create temporary arrays to hold the left and right subarrays.
+     2. Copy data to the temporary arrays.
+     3. Merge the temporary arrays back into the original array in sorted order.
+     4. Copy any remaining elements.
+
+   - Function: printArray(int arr[], int n)
+     1. Print all elements of the array separated by spaces.

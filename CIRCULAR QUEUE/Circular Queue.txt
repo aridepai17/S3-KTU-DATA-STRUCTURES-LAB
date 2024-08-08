@@ -1,0 +1,62 @@
+1. Initialize:
+   - Define the size of the queue as SIZE.
+   - Create an array `queue` of size SIZE to hold the queue elements.
+   - Initialize `front` and `rear` to -1.
+
+2. Function: isEmpty
+   - Return true if `front` is -1 (queue is empty).
+   - Otherwise, return false.
+
+3. Function: isFull
+   - Return true if `(rear + 1) % SIZE` equals `front` (queue is full).
+   - Otherwise, return false.
+
+4. Function: insert(value)
+   - If `isFull()` returns true:
+     - Print "Queue is full. Cannot insert value".
+     - Exit the function.
+   - If `isEmpty()` returns true:
+     - Set `front` to 0.
+   - Set `rear` to `(rear + 1) % SIZE`.
+   - Insert `value` into `queue[rear]`.
+   - Print "value inserted into queue".
+
+5. Function: delete
+   - If `isEmpty()` returns true:
+     - Print "Queue is empty. Cannot delete".
+     - Return -1 as a sentinel value to indicate failure.
+   - Set `value` to `queue[front]`.
+   - If `front` equals `rear`:
+     - Set both `front` and `rear` to -1 (queue is now empty).
+   - Otherwise:
+     - Set `front` to `(front + 1) % SIZE`.
+   - Return `value`.
+
+6. Function: display
+   - If `isEmpty()` returns true:
+     - Print "Queue is empty".
+     - Exit the function.
+   - Print "Queue elements are: ".
+   - Set `i` to `front`.
+   - Loop through the queue from `front` to `rear`:
+     - Print `queue[i]`.
+     - Update `i` to `(i + 1) % SIZE`.
+     - If `i` equals `rear`, break the loop.
+   - Print a newline character.
+
+7. Main Program:
+   - Display a menu with options: Insert, Delete, Display, Exit.
+   - Read user choice.
+   - Perform the corresponding operation based on user choice:
+     - For Insert:
+       - Prompt user to enter value.
+       - Call `insert(value)`.
+     - For Delete:
+       - Call `delete()` and print the deleted value if not -1.
+     - For Display:
+       - Call `display()`.
+     - For Exit:
+       - Print "Exiting..." and terminate the program.
+   - Repeat until user chooses to exit.
+
+8. End.

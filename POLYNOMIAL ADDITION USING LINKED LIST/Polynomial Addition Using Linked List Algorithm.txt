@@ -1,0 +1,58 @@
+1. Define Node Structure
+   - Create a structure `Node` with:
+     - `int coef`: to store the coefficient of the polynomial term.
+     - `int exp`: to store the exponent of the polynomial term.
+     - `struct Node *next`: pointer to the next node in the linked list.
+
+2. Create a New Node
+   - Function: `createNode(int coef, int exp)`
+     - Allocate memory for a new node.
+     - Set `coef` field to the given coefficient.
+     - Set `exp` field to the given exponent.
+     - Set `next` pointer to NULL.
+     - Return the new node.
+
+3. Insert a Node into the Polynomial Linked List
+   - Function: `insertNode(Node **head, int coef, int exp)`
+     - Create a new node with the given `coef` and `exp`.
+     - If `*head` is NULL or the exponent of the new node is greater than the exponent of the head node:
+       - Insert the new node at the beginning.
+       - Set `*head` to the new node.
+     - Otherwise:
+       - Traverse the list to find the correct position for the new node.
+       - Insert the new node in the correct position, maintaining descending order of exponents.
+       - If a node with the same exponent already exists, combine the coefficients.
+
+4. Add Two Polynomials
+   - Function: `addPolynomials(Node *poly1, Node *poly2)`
+     - Create an empty result list.
+     - While both `poly1` and `poly2` are not NULL:
+       - Compare the exponents of the current nodes of `poly1` and `poly2`.
+       - Insert nodes with the larger exponent into the result list.
+       - If exponents are equal, add coefficients and insert the result into the result list.
+     - Insert any remaining nodes from `poly1` or `poly2` into the result list.
+     - Return the result list.
+
+5. Display a Polynomial
+   - Function: `displayPolynomial(Node *head)`
+     - If `head` is NULL:
+       - Print "Polynomial is empty".
+       - Return.
+     - Traverse the list from `head` to the end:
+       - Print each node's `coef` and `exp`.
+       - Print "+" between terms except before the first term.
+
+6. Main Program
+   - Initialize `poly1`, `poly2`, and `result` to NULL.
+   - Input terms for the first polynomial:
+     1. Read the number of terms.
+     2. For each term, read `coef` and `exp`, and insert it into `poly1`.
+   - Input terms for the second polynomial:
+     1. Read the number of terms.
+     2. For each term, read `coef` and `exp`, and insert it into `poly2`.
+   - Add the two polynomials:
+     - Call `addPolynomials(poly1, poly2)` and store the result in `result`.
+   - Display the resulting polynomial:
+     - Call `displayPolynomial(result)`.
+   - Free allocated memory for all nodes in `poly1`, `poly2`, and `result` to avoid memory leaks.
+

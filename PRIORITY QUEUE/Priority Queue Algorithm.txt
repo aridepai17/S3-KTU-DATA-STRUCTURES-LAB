@@ -1,0 +1,40 @@
+1. Initialize
+   - Create an array `data` of size `MAX` to store elements.
+   - Create an array `priority` of size `MAX` to store the priorities.
+   - Set `size` to 0 to keep track of the number of elements.
+
+2. Insert(value, priority)
+   - If `size` is equal to `MAX`, print "Priority Queue is full" and return.
+   - Initialize variable `i` to `size - 1`.
+   - While `i` is greater than or equal to 0 and `priority[i]` is less than `priority`:
+     - Move `data[i]` and `priority[i]` one position to the right (`data[i + 1] = data[i]` and `priority[i + 1] = priority[i]`).
+     - Decrement `i` by 1.
+   - Insert `value` at position `i + 1` in `data` and `priority` at the same position.
+   - Increment `size` by 1.
+
+3. Dequeue
+   - If `size` is 0, print "Priority Queue is empty" and return `-1`.
+   - Store the element at the front of the queue (`data[0]`) in a variable `maxValue`.
+   - For `i` from 0 to `size - 2`:
+     - Move `data[i + 1]` to `data[i]` and `priority[i + 1]` to `priority[i]`.
+   - Decrement `size` by 1.
+   - Return `maxValue`.
+
+4. Display
+   - If `size` is 0, print "Priority Queue is empty" and return.
+   - For each element from `0` to `size - 1`:
+     - Print `data[i]` and `priority[i]` in the format "Value: Priority".
+
+5. Main Program
+   - Initialize the priority queue.
+   - Display a menu for operations:
+     1. Insert
+     2. Dequeue
+     3. Display
+     4. Exit
+   - Read user choice.
+   - Perform the chosen operation:
+     - For Insert: Read `value` and `priority`, call `insert(value, priority)`.
+     - For Dequeue: Call `dequeue()` and print the returned value.
+     - For Display: Call `display()`.
+     - For Exit: Terminate the program.

@@ -1,0 +1,59 @@
+1. Start
+
+2. Define MAX as 100 (to set the maximum size for the sparse matrix arrays).
+
+3. Define a structure `SparseElement` to represent a non-zero element in the sparse matrix:
+   - int row
+   - int col
+   - int value
+
+4. Define a function `inputSparseMatrix(SparseElement sparse[], int *numElements)`:
+   - Input: An array `sparse[]` of `SparseElement` and an integer pointer `numElements`.
+   - Process:
+     - Prompt user to enter the number of rows and columns.
+     - Prompt user to enter the number of non-zero elements.
+     - For each non-zero element:
+       - Prompt user to enter the row, column, and value.
+       - Store these values in `sparse[i].row`, `sparse[i].col`, and `sparse[i].value` respectively.
+
+5. Define a function `displaySparseMatrix(SparseElement sparse[], int numElements, int rows, int cols)`:
+   - Input: An array `sparse[]` of `SparseElement`, an integer `numElements`, and integers `rows` and `cols`.
+   - Process:
+     - Create a matrix of size `rows x cols` initialized to 0.
+     - For each non-zero element in `sparse[]`:
+       - Set the corresponding position in the matrix to the element's value.
+     - Print the matrix in a readable format.
+
+6. Define a function `transposeSparseMatrix(SparseElement sparse[], SparseElement transposed[], int numElements)`:
+   - Input: An array `sparse[]` of `SparseElement`, an array `transposed[]` of `SparseElement`, and an integer `numElements`.
+   - Process:
+     - For each non-zero element in `sparse[]`:
+       - Set `transposed[i].row` to `sparse[i].col`.
+       - Set `transposed[i].col` to `sparse[i].row`.
+       - Set `transposed[i].value` to `sparse[i].value`.
+
+7. Define a function `addSparseMatrices(SparseElement sparse1[], int num1, SparseElement sparse2[], int num2, SparseElement result[], int *numResult)`:
+   - Input: Arrays `sparse1[]` and `sparse2[]` of `SparseElement`, integers `num1` and `num2`, an array `result[]` of `SparseElement`, and an integer pointer `numResult`.
+   - Process:
+     - Initialize indices `i`, `j`, and `k` to 0.
+     - While `i < num1` and `j < num2`:
+       - Compare rows and columns of `sparse1[i]` and `sparse2[j]`:
+         - If `sparse1[i]` is less, add it to `result[]` and increment `i`.
+         - If `sparse2[j]` is less, add it to `result[]` and increment `j`.
+         - If both are equal, add their values and store in `result[]` if the sum is non-zero, then increment both `i` and `j`.
+     - Add any remaining elements from `sparse1[]` and `sparse2[]` to `result[]`.
+     - Set `*numResult` to the number of elements in `result[]`.
+
+8. In the `main` function:
+   - Declare arrays `sparse1[MAX]`, `sparse2[MAX]`, `result[MAX]`, and `transposed[MAX]` of `SparseElement`.
+   - Declare integers `num1`, `num2`, and `numResult`.
+   - Input the first sparse matrix by calling `inputSparseMatrix(sparse1, &num1)`.
+   - Input the second sparse matrix by calling `inputSparseMatrix(sparse2, &num2)`.
+   - Display the first sparse matrix by calling `displaySparseMatrix(sparse1, num1, rows, cols)`.
+   - Display the second sparse matrix by calling `displaySparseMatrix(sparse2, num2, rows, cols)`.
+   - Compute the transpose of the first sparse matrix by calling `transposeSparseMatrix(sparse1, transposed, num1)`.
+   - Display the transposed matrix by calling `displaySparseMatrix(transposed, num1, rows, cols)`.
+   - Add the two sparse matrices by calling `addSparseMatrices(sparse1, num1, sparse2, num2, result, &numResult)`.
+   - Display the resultant matrix by calling `displaySparseMatrix(result, numResult, rows, cols)`.
+
+9. End

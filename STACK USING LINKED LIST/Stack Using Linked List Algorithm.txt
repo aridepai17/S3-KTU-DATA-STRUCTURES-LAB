@@ -1,0 +1,54 @@
+1. Define Node Structure
+   - Create a structure `Node` with:
+     - `int data`: to store the node's data.
+     - `struct Node *next`: pointer to the next node.
+
+2. Create a New Node
+   - Function: `createNode(int data)`
+     - Allocate memory for a new node.
+     - Set `data` field to the provided value.
+     - Set `next` pointer to NULL.
+     - Return the new node.
+
+3. Push an Element onto the Stack
+   - Function: `push(Node **top, int data)`
+     - Create a new node with the given `data`.
+     - Set the `next` pointer of the new node to the current top node.
+     - Update `*top` to point to the new node.
+     - Print the pushed value.
+
+4. Pop an Element from the Stack
+   - Function: `pop(Node **top)`
+     - If `*top` is NULL (empty stack):
+       - Print "Stack Underflow".
+       - Return -1 (or a sentinel value indicating error).
+     - Store the node at the top in a temporary variable.
+     - Update `*top` to point to the next node.
+     - Retrieve the data from the temporary node.
+     - Free the memory of the temporary node.
+     - Return the retrieved data.
+
+5. Display the Stack Elements
+   - Function: `display(Node *top)`
+     - If `top` is NULL (empty stack):
+       - Print "Stack is Empty".
+       - Return.
+     - Traverse the stack from `top` to the end:
+       - Print each node's `data`.
+     - Continue until reaching the end of the stack.
+
+6. Main Program
+   - Initialize `top` to NULL.
+   - Display a menu for operations:
+     1. Push
+     2. Pop
+     3. Display
+     4. Exit
+   - Read user choice.
+   - Perform the chosen operation:
+     - For Push: Read `data`, call `push(&top, data)`.
+     - For Pop: Call `pop(&top)` and print the returned value.
+     - For Display: Call `display(top)`.
+     - For Exit: Terminate the program.
+   - Free allocated memory (optional):
+     - Traverse the stack and free each node to avoid memory leaks.

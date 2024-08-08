@@ -1,0 +1,37 @@
+1. Define Data Structures
+   - Create a 2D array `adjMatrix[MAX_VERTICES][MAX_VERTICES]` to represent the adjacency matrix.
+   - Create an array `visited[MAX_VERTICES]` to keep track of visited vertices.
+   - Use `n` to store the number of vertices in the graph.
+
+2. Initialize the Graph
+   - Function: `initializeGraph(int vertices)`
+     - Set `n` to the number of vertices.
+     - Initialize all entries in `adjMatrix` to 0.
+
+3. Add an Edge to the Graph
+   - Function: `addEdge(int start, int end)`
+     - Set `adjMatrix[start][end]` and `adjMatrix[end][start]` to 1 (for undirected graph).
+
+4. Perform BFS Traversal
+   - Function: `BFS(int start)`
+     - Initialize a queue.
+     - Mark the starting vertex as visited and enqueue it.
+     - While the queue is not empty:
+       - Dequeue a vertex and print it.
+       - Enqueue all unvisited adjacent vertices and mark them as visited.
+
+5. Perform DFS Traversal
+   - Function: `DFS(int start)`
+     - Print the current vertex and mark it as visited.
+     - Recursively call `DFS` for all unvisited adjacent vertices.
+
+6. Reset Visited Array
+   - Function: `resetVisited()`
+     - Set all entries in the `visited` array to 0.
+
+7. Main Program
+   - Read the number of vertices and edges.
+   - Call `initializeGraph(vertices)` to initialize the graph.
+   - Read and add edges using `addEdge(start, end)`.
+   - Call `resetVisited()` before each traversal.
+   - Call `BFS(start)` and `DFS(start)` with user-provided starting vertex.

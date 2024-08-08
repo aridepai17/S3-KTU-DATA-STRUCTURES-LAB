@@ -1,0 +1,73 @@
+1. Define Node Structure
+   - Create a structure `Node` with:
+     - `int data`: to store the value of the node.
+     - `struct Node *left`: pointer to the left child.
+     - `struct Node *right`: pointer to the right child.
+
+2. Create a New Node
+   - Function: `createNode(int data)`
+     - Allocate memory for a new node.
+     - Set `data` field to the given value.
+     - Set `left` and `right` pointers to NULL.
+     - Return the new node.
+
+3. Insert a New Node into the BST
+   - Function: `insertNode(Node *root, int data)`
+     - If `root` is NULL, return a new node with the given `data`.
+     - If `data` is less than `root->data`:
+       - Recursively insert into the left subtree.
+     - If `data` is greater than `root->data`:
+       - Recursively insert into the right subtree.
+     - Return the root.
+
+4. Perform Inorder Traversal
+   - Function: `inorderTraversal(Node *root)`
+     - If `root` is not NULL:
+       - Recursively traverse the left subtree.
+       - Print the `data` of the current node.
+       - Recursively traverse the right subtree.
+
+5. Perform Preorder Traversal
+   - Function: `preorderTraversal(Node *root)`
+     - If `root` is not NULL:
+       - Print the `data` of the current node.
+       - Recursively traverse the left subtree.
+       - Recursively traverse the right subtree.
+
+6. Perform Postorder Traversal
+   - Function: `postorderTraversal(Node *root)`
+     - If `root` is not NULL:
+       - Recursively traverse the left subtree.
+       - Recursively traverse the right subtree.
+       - Print the `data` of the current node.
+
+7. Find the Minimum Value Node
+   - Function: `findMin(Node *root)`
+     - Traverse the left subtree until reaching the leftmost node.
+     - Return the node with the minimum value.
+
+8. Delete a Node from the BST
+   - Function: `deleteNode(Node *root, int data)`
+     - If `root` is NULL, return NULL.
+     - If `data` is less than `root->data`:
+       - Recursively delete from the left subtree.
+     - If `data` is greater than `root->data`:
+       - Recursively delete from the right subtree.
+     - If `data` is equal to `root->data`:
+       - If the node has only one child or no child:
+         - Replace the node with its child.
+       - If the node has two children:
+         - Find the inorder successor (smallest node in the right subtree).
+         - Replace the node's `data` with the inorder successor's `data`.
+         - Recursively delete the inorder successor.
+     - Return the updated root.
+
+9. Main Program
+   - Initialize `root` to NULL.
+   - Provide a menu to perform various operations on the BST:
+     1. Insert Node: Read value and insert it into the BST.
+     2. Inorder Traversal: Print the BST in inorder.
+     3. Preorder Traversal: Print the BST in preorder.
+     4. Postorder Traversal: Print the BST in postorder.
+     5. Delete Node: Read value and delete it from the BST.
+     6. Exit: Terminate the program.

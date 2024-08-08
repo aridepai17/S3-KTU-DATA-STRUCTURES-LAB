@@ -1,0 +1,90 @@
+1. Initialize:
+   - Define the size of the deque as SIZE.
+   - Create an array `deque` of size SIZE to hold the elements.
+   - Initialize `front` and `rear` to -1.
+
+2. Function: isFull
+   - Return true if `(rear + 1) % SIZE` equals `front` (deque is full).
+   - Otherwise, return false.
+
+3. Function: isEmpty
+   - Return true if `front` is -1 (deque is empty).
+   - Otherwise, return false.
+
+4. Function: insertFront(value)
+   - If `isFull()` returns true:
+     - Print "Deque is full. Cannot insert value at the front".
+     - Exit the function.
+   - If `isEmpty()` returns true:
+     - Set `front` and `rear` to 0.
+   - Otherwise:
+     - Update `front` to `(front - 1 + SIZE) % SIZE`.
+   - Insert `value` into `deque[front]`.
+   - Print "value inserted at the front".
+
+5. Function: insertRear(value)
+   - If `isFull()` returns true:
+     - Print "Deque is full. Cannot insert value at the rear".
+     - Exit the function.
+   - If `isEmpty()` returns true:
+     - Set `front` and `rear` to 0.
+   - Otherwise:
+     - Update `rear` to `(rear + 1) % SIZE`.
+   - Insert `value` into `deque[rear]`.
+   - Print "value inserted at the rear".
+
+6. Function: deleteFront
+   - If `isEmpty()` returns true:
+     - Print "Deque is empty. Cannot delete from the front".
+     - Return -1 as a sentinel value to indicate failure.
+   - Set `value` to `deque[front]`.
+   - If `front` equals `rear`:
+     - Set both `front` and `rear` to -1 (deque is now empty).
+   - Otherwise:
+     - Update `front` to `(front + 1) % SIZE`.
+   - Return `value`.
+
+7. Function: deleteRear
+   - If `isEmpty()` returns true:
+     - Print "Deque is empty. Cannot delete from the rear".
+     - Return -1 as a sentinel value to indicate failure.
+   - Set `value` to `deque[rear]`.
+   - If `front` equals `rear`:
+     - Set both `front` and `rear` to -1 (deque is now empty).
+   - Otherwise:
+     - Update `rear` to `(rear - 1 + SIZE) % SIZE`.
+   - Return `value`.
+
+8. Function: display
+   - If `isEmpty()` returns true:
+     - Print "Deque is empty".
+     - Exit the function.
+   - Print "Deque elements are: ".
+   - Set `i` to `front`.
+   - Loop through the deque from `front` to `rear`:
+     - Print `deque[i]`.
+     - Update `i` to `(i + 1) % SIZE`.
+     - If `i` equals `rear`, break the loop.
+   - Print a newline character.
+
+9. Main Program:
+   - Display a menu with options: Insert Front, Insert Rear, Delete Front, Delete Rear, Display, Exit.
+   - Read user choice.
+   - Perform the corresponding operation based on user choice:
+     - For Insert Front:
+       - Prompt user to enter value.
+       - Call `insertFront(value)`.
+     - For Insert Rear:
+       - Prompt user to enter value.
+       - Call `insertRear(value)`.
+     - For Delete Front:
+       - Call `deleteFront()` and print the deleted value if not -1.
+     - For Delete Rear:
+       - Call `deleteRear()` and print the deleted value if not -1.
+     - For Display:
+       - Call `display()`.
+     - For Exit:
+       - Print "Exiting..." and terminate the program.
+   - Repeat until user chooses to exit.
+
+10. End.

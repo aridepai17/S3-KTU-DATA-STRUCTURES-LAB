@@ -1,0 +1,37 @@
+Step-by-Step Algorithm for Linear Search
+
+1. Start
+
+2. Input Array Size
+   - Prompt the user to enter the number of elements (`size`) in the array.
+   - Store this value in a variable called `size`.
+
+3. Declare the Array
+   - Declare an array `arr` of size `size`.
+
+4. Input Array Elements
+   - Prompt the user to enter the elements of the array.
+   - For each element (from index `0` to `size-1`):
+     - Read the element and store it in `arr[i]`.
+
+5. Input Target Element
+   - Prompt the user to enter the target element (`target`) that they want to search for in the array.
+   - Store this value in a variable called `target`.
+
+6. Initialize Search
+   - Set a variable `found_index` to `-1` to track if the target is found.
+
+7. Perform Linear Search
+   - Loop through each element in the array from index `0` to `size-1`:
+     - Compare `arr[i]` with the `target`.
+     - If `arr[i]` equals `target`:
+       - Set `found_index` to `i` (the current index).
+       - Break the loop since the target is found.
+
+8. Check Result
+   - If `found_index` is not `-1`:
+     - Print that the element was found and its index.
+   - Otherwise:
+     - Print that the element was not found in the array.
+
+9. End

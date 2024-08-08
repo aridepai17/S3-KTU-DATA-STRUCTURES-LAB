@@ -1,0 +1,50 @@
+1. Initialization:
+   - Define SIZE as 100.
+   - Create an array queue of size SIZE.
+   - Initialize front to -1 (indicating an empty queue).
+   - Initialize rear to -1.
+
+2. Enqueue Operation:
+   - Input: value to be added to the queue.
+   - Check: If rear equals SIZE - 1 (queue is full):
+     - Print "Queue Overflow".
+     - Return.
+   - Check: If front equals -1 (queue is empty):
+     - Set front to 0.
+   - Increment rear by 1.
+   - Set queue[rear] to value.
+   - Print "value added to queue".
+
+3. Dequeue Operation:
+   - Check: If front equals -1 or front is greater than rear (queue is empty):
+     - Print "Queue Underflow".
+     - Return -1 (sentinel value).
+   - Retrieve the value from queue[front].
+   - Increment front by 1.
+   - Return the retrieved value.
+
+4. Display Operation:
+   - Check: If front equals -1 or front is greater than rear (queue is empty):
+     - Print "Queue is Empty".
+     - Return.
+   - Print "Queue elements are:".
+   - Loop from front to rear:
+     - Print queue[i].
+
+5. Main Program:
+   - Initialize the queue.
+   - Repeat until the user chooses to exit:
+     - Display menu options (Enqueue, Dequeue, Display, Exit).
+     - Input: User choice.
+     - Switch on user choice:
+       - Case 1 (Enqueue):
+         - Input: Value to enqueue.
+         - Call enqueue(value).
+       - Case 2 (Dequeue):
+         - Call dequeue() and print the result.
+       - Case 3 (Display):
+         - Call display().
+       - Case 4 (Exit):
+         - Print "Exiting...".
+       - Default:
+         - Print "Invalid choice".

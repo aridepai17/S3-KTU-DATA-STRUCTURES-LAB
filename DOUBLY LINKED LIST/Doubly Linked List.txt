@@ -1,0 +1,100 @@
+1. Define Node Structure
+   - Create a structure `Node` with:
+     - `int data`: to store the node's data.
+     - `struct Node *prev`: pointer to the previous node.
+     - `struct Node *next`: pointer to the next node.
+
+2. Create a New Node
+   - Function: `createNode(int data)`
+     - Allocate memory for a new node.
+     - Set `data` field to the provided value.
+     - Set `prev` and `next` pointers to NULL.
+     - Return the new node.
+
+3. Insert Node at the Beginning
+   - Function: `insertAtBeginning(Node **head, int data)`
+     - Create a new node with the given `data`.
+     - Set the `next` pointer of the new node to `*head`.
+     - If `*head` is not NULL, set the `prev` pointer of the old head to the new node.
+     - Update `*head` to point to the new node.
+
+4. Insert Node at the End
+   - Function: `insertAtEnd(Node **head, int data)`
+     - Create a new node with the given `data`.
+     - If `*head` is NULL:
+       - Set `*head` to the new node.
+       - Return.
+     - Otherwise:
+       - Traverse the list to find the last node.
+       - Set the `next` pointer of the last node to the new node.
+       - Set the `prev` pointer of the new node to the last node.
+
+5. Delete Node from the Front
+   - Function: `deleteFromFront(Node **head)`
+     - If `*head` is NULL:
+       - Print "List is empty".
+       - Return.
+     - Store the node at the front in a temporary variable.
+     - Update `*head` to point to the next node.
+     - If `*head` is not NULL, set its `prev` pointer to NULL.
+     - Free the memory of the old front node.
+
+6. Delete Node from the End
+   - Function: `deleteFromEnd(Node **head)`
+     - If `*head` is NULL:
+       - Print "List is empty".
+       - Return.
+     - If the list contains only one node:
+       - Free the node and set `*head` to NULL.
+       - Return.
+     - Otherwise:
+       - Traverse the list to find the second-to-last node.
+       - Set the `next` pointer of the second-to-last node to NULL.
+       - Free the last node.
+
+7. Delete Specific Node
+   - Function: `deleteSpecificNode(Node **head, int data)`
+     - If `*head` is NULL:
+       - Print "List is empty".
+       - Return.
+     - If the node to delete is the head:
+       - Update `*head` to point to the next node.
+       - Set the `prev` pointer of the new head (if not NULL) to NULL.
+       - Free the old head node.
+       - Return.
+     - Otherwise:
+       - Traverse the list to find the node with the given `data`.
+       - Update the `prev` pointer of the next node (if not NULL) to the previous node.
+       - Update the `next` pointer of the previous node (if not NULL) to the next node.
+       - Free the memory of the node to be deleted.
+
+8. Display the List
+   - Function: `displayList(Node *head)`
+     - If `head` is NULL:
+       - Print "List is empty".
+       - Return.
+     - Traverse the list from `head` to the end:
+       - Print each node's `data` followed by " <-> ".
+     - Print "NULL" at the end.
+
+9. Main Program
+   - Initialize `head` to NULL.
+   - Display a menu for operations:
+     1. Insert at Beginning
+     2. Insert at End
+     3. Delete from Front
+     4. Delete from End
+     5. Delete Specific Node
+     6. Display List
+     7. Exit
+   - Read user choice.
+   - Perform the chosen operation:
+     - For Insert at Beginning: Read `data`, call `insertAtBeginning(&head, data)`.
+     - For Insert at End: Read `data`, call `insertAtEnd(&head, data)`.
+     - For Delete from Front: Call `deleteFromFront(&head)`.
+     - For Delete from End: Call `deleteFromEnd(&head)`.
+     - For Delete Specific Node: Read `data`, call `deleteSpecificNode(&head, data)`.
+     - For Display List: Call `displayList(head)`.
+     - For Exit: Terminate the program.
+   - Free allocated memory at the end (optional):
+     - Traverse the list and free each node.

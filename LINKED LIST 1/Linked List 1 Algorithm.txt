@@ -1,0 +1,53 @@
+1. Define Node Structure
+   - Create a structure `Node` with the following fields:
+     - `int data`: to store the node's data.
+     - `struct Node *next`: pointer to the next node.
+
+2. Create a New Node
+   - Function: `createNode(int data)`
+     - Allocate memory for a new node.
+     - Set `data` field to the provided value.
+     - Set `next` pointer to NULL.
+     - Return the new node.
+
+3. Append Node to the List
+   - Function: `append(Node **head, int data)`
+     - Create a new node with the given `data`.
+     - If `head` is NULL:
+       - Set `*head` to the new node.
+     - Otherwise:
+       - Traverse the list to find the last node.
+       - Set the `next` pointer of the last node to the new node.
+
+4. Count Nodes in the List
+   - Function: `countNodes(Node *head)`
+     - Initialize `count` to 0.
+     - Traverse the list from `head` to the end:
+       - Increment `count` for each node.
+     - Return `count`.
+
+5. Display the List
+   - Function: `displayList(Node *head)`
+     - If `head` is NULL:
+       - Print "List is empty".
+     - Otherwise:
+       - Traverse the list from `head` to the end:
+         - Print the `data` of each node followed by " -> ".
+       - Print "NULL" at the end.
+
+6. Main Program
+   - Initialize `head` to NULL.
+   - Display a menu for operations:
+     1. Append Node
+     2. Count Nodes
+     3. Display List
+     4. Exit
+   - Read user choice.
+   - Perform the chosen operation:
+     - For Append Node: Read `data`, call `append(&head, data)`.
+     - For Count Nodes: Call `countNodes(head)` and print the result.
+     - For Display List: Call `displayList(head)`.
+     - For Exit: Terminate the program.
+   - Free allocated memory at the end (optional):
+     - Traverse the list and free each node.
+

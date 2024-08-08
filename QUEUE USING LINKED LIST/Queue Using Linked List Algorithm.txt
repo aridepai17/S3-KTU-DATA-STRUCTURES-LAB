@@ -1,0 +1,60 @@
+1. Define Node Structure
+   - Create a structure `Node` with:
+     - `int data`: to store the node's data.
+     - `struct Node *next`: pointer to the next node.
+
+2. Create a New Node
+   - Function: `createNode(int data)`
+     - Allocate memory for a new node.
+     - Set `data` field to the provided value.
+     - Set `next` pointer to NULL.
+     - Return the new node.
+
+3. Enqueue (Insert at the End)
+   - Function: `enqueue(Node **rear, Node **front, int data)`
+     - Create a new node with the given `data`.
+     - If `*rear` is NULL (empty queue):
+       - Set both `*front` and `*rear` to the new node.
+     - Otherwise:
+       - Set the `next` pointer of `*rear` to the new node.
+       - Update `*rear` to point to the new node.
+     - Print the enqueued value.
+
+4. Dequeue (Delete from the Front)
+   - Function: `dequeue(Node **front)`
+     - If `*front` is NULL (empty queue):
+       - Print "Queue Underflow".
+       - Return -1 (or a sentinel value indicating error).
+     - Store the node at the front in a temporary variable.
+     - Update `*front` to point to the next node.
+     - If `*front` becomes NULL:
+       - Set `*rear` to NULL.
+     - Retrieve the data from the temporary node.
+     - Free the memory of the temporary node.
+     - Return the retrieved data.
+
+5. Display the Queue Elements
+   - Function: `display(Node *front)`
+     - If `front` is NULL (empty queue):
+       - Print "Queue is Empty".
+       - Return.
+     - Traverse the queue from `front` to the end:
+       - Print each node's `data`.
+     - Continue until reaching the end of the queue.
+
+6. Main Program
+   - Initialize `front` and `rear` to NULL.
+   - Display a menu for operations:
+     1. Enqueue
+     2. Dequeue
+     3. Display
+     4. Exit
+   - Read user choice.
+   - Perform the chosen operation:
+     - For Enqueue: Read `data`, call `enqueue(&rear, &front, data)`.
+     - For Dequeue: Call `dequeue(&front)` and print the returned value.
+     - For Display: Call `display(front)`.
+     - For Exit: Terminate the program.
+   - Free allocated memory (optional):
+     - Traverse the queue and free each node to avoid memory leaks.
+
